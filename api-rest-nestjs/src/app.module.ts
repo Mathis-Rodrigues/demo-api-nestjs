@@ -5,6 +5,8 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { ConfigModule, ConfigService } from '@nestjs/config';
 import { ContactsModule } from './contacts/contacts.module';
 import { join } from 'path';
+import { ProductsModule } from './products/products.module';
+import { SubscriptionsModule } from './subscriptions/subscriptions.module';
 
 @Module({
   imports: [
@@ -24,6 +26,8 @@ import { join } from 'path';
       inject: [ConfigService],
     }),
     ContactsModule,
+    ProductsModule,
+    SubscriptionsModule,
   ],
   controllers: [AppController],
   providers: [AppService],

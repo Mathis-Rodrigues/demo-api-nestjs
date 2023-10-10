@@ -1,17 +1,14 @@
 import { Subscription } from '../../subscriptions/entities/subscription.entity';
 import { Column, Entity, OneToMany, PrimaryGeneratedColumn } from 'typeorm';
 
-@Entity({ name: 'contacts' })
-export class Contact {
+@Entity({ name: 'products' })
+export class Product {
   @PrimaryGeneratedColumn()
   id: number;
 
   @Column()
-  firstName: string;
+  title: string;
 
-  @Column()
-  lastName: string;
-
-  @OneToMany(() => Subscription, (subscription) => subscription.contact)
+  @OneToMany(() => Subscription, (subscription) => subscription.product)
   subscriptions: Subscription[];
 }
